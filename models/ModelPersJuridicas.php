@@ -14,7 +14,7 @@ use Yii;
  *
  * @property TblPersonas $pERS
  */
-class ModelPersJuridica extends \yii\db\ActiveRecord
+class ModelPersJuridicas extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
