@@ -35,9 +35,9 @@ class ModelPersNaturales extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['PENA_ID', 'PERS_ID', 'SEX_ID', 'TIID_ID'], 'required'],
-            [['PENA_ID', 'PERS_ID', 'SEX_ID', 'TIID_ID'], 'integer'],
             [['PENA_FECHANAC'], 'safe'],
+            [['PERS_ID', 'SEX_ID', 'TIID_ID'], 'required'],
+            [['PERS_ID', 'SEX_ID', 'TIID_ID'], 'integer'],
             [['PENA_NOMBRE', 'PENA_APELLIDO'], 'string', 'max' => 30],
             [['PERS_ID'], 'unique'],
             [['PERS_ID'], 'exist', 'skipOnError' => true, 'targetClass' => ModelPersonas::className(), 'targetAttribute' => ['PERS_ID' => 'PERS_ID']],
