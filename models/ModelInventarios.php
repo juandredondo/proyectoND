@@ -16,7 +16,7 @@ use Yii;
  *
  * @property TblProductos $pROD
  */
-class ModelInvetarios extends \yii\db\ActiveRecord
+class ModelInventarios extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
