@@ -217,13 +217,13 @@ LOCK TABLES `tbl_permisos` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `tbl_persjuridica`
+-- Table structure for table `tbl_persjuridicas`
 --
 
-DROP TABLE IF EXISTS `tbl_persjuridica`;
+DROP TABLE IF EXISTS `tbl_persjuridicas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tbl_persjuridica` (
+CREATE TABLE `tbl_persjuridicas` (
   `PEJU_ID` int(11) NOT NULL AUTO_INCREMENT,
   `PEJU_NOMBRE` varchar(30) DEFAULT NULL,
   `PEJU_OBJETOCOMERCIAL` varchar(30) DEFAULT NULL,
@@ -236,12 +236,12 @@ CREATE TABLE `tbl_persjuridica` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tbl_persjuridica`
+-- Dumping data for table `tbl_persjuridicas`
 --
 
-LOCK TABLES `tbl_persjuridica` WRITE;
-/*!40000 ALTER TABLE `tbl_persjuridica` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_persjuridica` ENABLE KEYS */;
+LOCK TABLES `tbl_persjuridicas` WRITE;
+/*!40000 ALTER TABLE `tbl_persjuridicas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_persjuridicas` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -252,7 +252,7 @@ DROP TABLE IF EXISTS `tbl_persnaturales`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_persnaturales` (
-  `PENA_ID` int(11) NOT NULL,
+  `PENA_ID` int(11) NOT NULL AUTO_INCREMENT,
   `PENA_NOMBRE` varchar(30) DEFAULT NULL,
   `PENA_APELLIDO` varchar(30) DEFAULT NULL,
   `PENA_FECHANAC` date DEFAULT NULL,
@@ -267,7 +267,7 @@ CREATE TABLE `tbl_persnaturales` (
   CONSTRAINT `fk_TBL_PERSONASNATURALES_TBL_PERSONAS1` FOREIGN KEY (`PERS_ID`) REFERENCES `tbl_personas` (`PERS_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_TBL_PERSONASNATURALES_TBL_SEXOS1` FOREIGN KEY (`SEX_ID`) REFERENCES `tbl_sexos` (`SEX_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_TBL_PERSONASNATURALES_TBL_TIPOIDENTIFICACION1` FOREIGN KEY (`TIID_ID`) REFERENCES `tbl_tipoidentificacion` (`TIID_ID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -276,6 +276,7 @@ CREATE TABLE `tbl_persnaturales` (
 
 LOCK TABLES `tbl_persnaturales` WRITE;
 /*!40000 ALTER TABLE `tbl_persnaturales` DISABLE KEYS */;
+INSERT INTO `tbl_persnaturales` VALUES (1,'Juan David ','Redondo Robles','0000-00-00',1,1,1),(2,'Kendris Johana','Rodriguez Gomez','0000-00-00',2,2,1),(3,'Lenys milena','Bueno Tovio','0000-00-00',3,2,1),(4,'javier ','Redondo Robles','2006-05-26',7,1,2);
 /*!40000 ALTER TABLE `tbl_persnaturales` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -294,7 +295,7 @@ CREATE TABLE `tbl_personas` (
   `PERS_EMAIL` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`PERS_ID`),
   UNIQUE KEY `PERS_IDENTIFICACION_UNIQUE` (`PERS_IDENTIFICACION`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -303,6 +304,7 @@ CREATE TABLE `tbl_personas` (
 
 LOCK TABLES `tbl_personas` WRITE;
 /*!40000 ALTER TABLE `tbl_personas` DISABLE KEYS */;
+INSERT INTO `tbl_personas` VALUES (1,'1118837113','3043377736','calle 49a # 7h -69','juandredondo@gmail.com'),(2,'1118848946','3135233232','calle 27','kjohanarodriguez@gmail.com'),(3,'111889468825','3115256646','carrera 12b #72','lbueno@gmail.com'),(4,'1118','30433556565','calle 27','dmiranda@gmail.com'),(5,'444','44','44','44@gmail.com'),(6,'dee','ee','ee','jajaj@gmail.com'),(7,'91051323235','000','calle 45','jredondo@gmail.com');
 /*!40000 ALTER TABLE `tbl_personas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -365,7 +367,7 @@ CREATE TABLE `tbl_sexos` (
   `SEX_ID` int(11) NOT NULL AUTO_INCREMENT,
   `SEX_NOMBRE` varchar(25) NOT NULL,
   PRIMARY KEY (`SEX_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -374,6 +376,7 @@ CREATE TABLE `tbl_sexos` (
 
 LOCK TABLES `tbl_sexos` WRITE;
 /*!40000 ALTER TABLE `tbl_sexos` DISABLE KEYS */;
+INSERT INTO `tbl_sexos` VALUES (1,'masculino '),(2,'Femenino');
 /*!40000 ALTER TABLE `tbl_sexos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -388,7 +391,7 @@ CREATE TABLE `tbl_tipoidentificacion` (
   `TIID_ID` int(11) NOT NULL AUTO_INCREMENT,
   `TIID_DESCRIPCION` varchar(30) NOT NULL,
   PRIMARY KEY (`TIID_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -397,6 +400,7 @@ CREATE TABLE `tbl_tipoidentificacion` (
 
 LOCK TABLES `tbl_tipoidentificacion` WRITE;
 /*!40000 ALTER TABLE `tbl_tipoidentificacion` DISABLE KEYS */;
+INSERT INTO `tbl_tipoidentificacion` VALUES (1,'Cedula'),(2,'Tarjeta de Identidad'),(3,'Cedula de Extrangeria'),(4,'Pasaporte');
 /*!40000 ALTER TABLE `tbl_tipoidentificacion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -449,4 +453,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-29 16:45:44
+-- Dump completed on 2017-05-29 20:40:59
