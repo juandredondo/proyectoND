@@ -35,7 +35,8 @@ class ModelPersonas extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['PERS_IDENTIFICACION', 'PERS_TELEFONO', 'PERS_DIRECCION', 'PERS_EMAIL'], 'string', 'max' => 30],
+            [['PERS_IDENTIFICACION', 'PERS_TELEFONO', 'PERS_DIRECCION'], 'string', 'max' => 30],
+            [['PERS_EMAIL'],'email'],
             [['PERS_IDENTIFICACION'], 'unique'],
         ];
     }
@@ -46,11 +47,11 @@ class ModelPersonas extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'PERS_ID' => 'Pers  ID',
-            'PERS_IDENTIFICACION' => 'Pers  Identificacion',
-            'PERS_TELEFONO' => 'Pers  Telefono',
-            'PERS_DIRECCION' => 'Pers  Direccion',
-            'PERS_EMAIL' => 'Pers  Email',
+            'PERS_ID' => 'ID',
+            'PERS_IDENTIFICACION' => 'Identificacion',
+            'PERS_TELEFONO' => 'Telefono',
+            'PERS_DIRECCION' =>'Direccion',
+            'PERS_EMAIL' => '  Email',
         ];
     }
 
