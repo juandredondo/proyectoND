@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\BuscarTipoIden */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Model Tipo Idens';
+$this->title = 'Tipo de Identificacion';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="model-tipo-iden-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Model Tipo Iden', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Nuevo Tipo de Identificacion', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

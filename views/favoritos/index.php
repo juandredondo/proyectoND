@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\BuscarFavoritos */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Model Favoritos';
+$this->title = 'Favoritos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="model-favoritos-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Model Favoritos', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Nuevo Producto Favorito', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

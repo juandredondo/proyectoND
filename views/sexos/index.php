@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\BuscarSexos */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Model Sexos';
+$this->title = ' Sexos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="model-sexos-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Model Sexos', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Nuevo Sexo', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\BuscarInventarios */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Model Inventarios';
+$this->title = 'Inventarios';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="model-inventarios-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Model Inventarios', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Nuevo Ingreso', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

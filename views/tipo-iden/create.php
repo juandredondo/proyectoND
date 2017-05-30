@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\ModelTipoIden */
 
-$this->title = 'Create Model Tipo Iden';
-$this->params['breadcrumbs'][] = ['label' => 'Model Tipo Idens', 'url' => ['index']];
+$this->title = 'Tipo de Identificación';
+$this->params['breadcrumbs'][] = ['label' => 'Nuevo Tipo de Identificación', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="model-tipo-iden-create">

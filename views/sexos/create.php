@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\ModelSexos */
 
-$this->title = 'Create Model Sexos';
-$this->params['breadcrumbs'][] = ['label' => 'Model Sexos', 'url' => ['index']];
+$this->title = 'Sexos';
+$this->params['breadcrumbs'][] = ['label' => 'Nuevo Sexo', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="model-sexos-create">

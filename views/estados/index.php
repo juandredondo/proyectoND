@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\BuscarEstados */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Model Estados';
+$this->title = 'Estados';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="model-estados-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Model Estados', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Nuevo Estado de Pedido', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

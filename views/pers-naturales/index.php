@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\BuscarPersNaturales */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Model Pers Naturales';
+$this->title = 'Personas Naturales';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="model-pers-naturales-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Model Pers Naturales', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(' Nueva Persona Natural', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

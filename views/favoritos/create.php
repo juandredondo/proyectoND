@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\ModelFavoritos */
 
-$this->title = 'Create Model Favoritos';
-$this->params['breadcrumbs'][] = ['label' => 'Model Favoritos', 'url' => ['index']];
+$this->title = 'Favoritos';
+$this->params['breadcrumbs'][] = ['label' => 'Nuevo Favorito', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="model-favoritos-create">
