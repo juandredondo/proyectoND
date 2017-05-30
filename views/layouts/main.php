@@ -36,11 +36,35 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
-            Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/site/login']]
+            ['label' => 'Inicio', 'url' => ['/site/index']],
+            [
+             'label' => 'Basicos',
+                'items' => [
+                ['label' => 'Personas Naturales', 'url' => '/proyectoND/web/index.php?r=pers-naturales'],
+                ['label' => 'Personas Juridicas', 'url' => '/proyectoND/web/index.php?r=pers-juridicas'],
+                ['label' => 'Sexos', 'url' => '/proyectoND/web/index.php?r=sexos'],
+                ['label' => 'Tipos de Identificacion', 'url' => '/proyectoND/web/index.php?r=tipo-iden'],
+                ]],
+  
+             [
+             'label' => 'Pedidos',
+                'items' => [
+                ['label' => 'Pedidos', 'url' => '/proyectoND/web/index.php?r=pedidos'],
+                ['label' => 'Estado de los Pedidos', 'url' => '/proyectoND/web/index.php?r=estados'],
+                ['label' => 'Detalle de los Pedidos', 'url' => '/proyectoND/web/index.php?r=detalle-pedidos'],
+                ]],
+
+             [
+             'label' => 'Inventarios',
+                'items' => [
+                ['label' => 'Inventarios', 'url' => '/proyectoND/web/index.php?r=inventarios'],
+                ['label' => 'Productos', 'url' => '/proyectoND/web/index.php?r=productos'],
+                ['label' => 'Productos Favoritos', 'url' => '/proyectoND/web/index.php?r=favoritos'],
+                ]],
+
+              ['label' => 'Contacto', 'url' => ['/site/contact']],
+                 Yii::$app->user->isGuest ? (
+              ['label' => 'Iniciar Sesión', 'url' => ['/site/login']]
             ) : (
                 '<li>'
                 . Html::beginForm(['/site/logout'], 'post')
