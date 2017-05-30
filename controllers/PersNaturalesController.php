@@ -3,11 +3,21 @@
 namespace app\controllers;
 
 use Yii;
+//importando todos los modelos a utilizar 
 use app\models\ModelPersNaturales;
 use app\models\BuscarPersNaturales;
+use app\models\ModelPersonas;
+use app\models\ModelSexos;
+use app\models\ModelTipoIden;
+
+use yii\helpers\ArrayHelper;//para trabajar con las listas desplegables
+use yii\jui\DatePicker;//trabajando  con el calentario
+
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+
+use yii\helpers\Json;
 
 /**
  * PersNaturalesController implements the CRUD actions for ModelPersNaturales model.
@@ -63,13 +73,39 @@ class PersNaturalesController extends Controller
      */
     public function actionCreate()
     {
-        $model = new ModelPersNaturales();
+        //declarando el objeto de los modelos correspondientes
+        $modelPersNaturales = new ModelPersNaturales();
+        $modelPersonas = new ModelPersonas();
+        $modelSexos = new ModelSexos();
+        $modelTipoIden = new ModelTipoIden();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->PENA_ID]);
-        } else {
+
+        //1.cargando todos los modelos de personas y personas naturales 
+        if ($modelPersonas->load(Yii::$app->request->post())&&
+            $modelPersNaturales->load(Yii::$app->request->post()))
+         {
+
+            //si se guarda el modelo personas, se le coloca su id  de llave foranea en la tabla personas naturales
+            if($modelPersonas->save())
+            {
+                //guarda el ide de personas y lo agrega en la tabla personas naturales
+                $modelPersNaturales->PERS_ID=$modelPersonas->PERS_ID;
+                //  si se guarda en personas naturales entonces muestra el respectivo detalle
+                if($modelPersNaturales->save())
+                {
+                    return $this->redirect(['view', 'id' => $modelPersNaturales->PENA_ID]);
+                }
+            }
+
+        }
+         // si no se han cargado los datos llamo al formulario create y le mando los modelos
+
+        else {
             return $this->render('create', [
-                'model' => $model,
+                'modelPersNaturales' => $modelPersNaturales,
+                'modelPersonas'      => $modelPersonas,
+                'modelSexos'         => $modelSexos,
+                'modelTipoIden'      => $modelTipoIden,
             ]);
         }
     }

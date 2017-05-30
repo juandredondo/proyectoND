@@ -15,7 +15,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [
-        'model' => $model,
-    ]) ?>
+    	//le manda por parametro al formulario el objeto de los modelos de personas naturales
+        'modelPersNaturales' => $modelPersNaturales,
+        'modelPersonas'      => $modelPersonas,
+		'modelSexos'         => $modelSexos,
+		'modelTipoIden'      => $modelTipoIden,
+	]) ?>
 
 </div>
