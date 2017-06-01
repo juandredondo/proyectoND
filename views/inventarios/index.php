@@ -3,7 +3,8 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\app\ModelInventarios;
-
+use yii\app\ModelPedidos;
+use yii\helpers\ArrayHelper;
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\BuscarInventarios */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -53,7 +54,26 @@ $this->params['breadcrumbs'][] = $this->title;
             'INVE_ESTADO',
             // 'PROD_ID',
 
-            ['class' => 'yii\grid\ActionColumn'],
+           
+           ['class' => 'yii\grid\ActionColumn',
+
+           
+            'template' => '{update}{delete}{view} {pedidos}',
+                'buttons'  =>
+                 [
+                   
+                    'pedidos'=>function($model, $key,$url){
+                                $url=Yii::$app->urlManager->createUrl(['pedidos/create' ]);
+                            return Html::a('<span class=" glyphicon glyphicon-file "> </span>', $url ,
+                                [
+                                    'title' => \Yii::t('yii', 'Pedidos'),
+                                ]);    
+
+                            }, 
+                ],
+             ],
         ],
     ]); ?>
+
+
 </div>

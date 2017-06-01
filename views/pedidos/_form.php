@@ -14,13 +14,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'PEDI_FECHA')->textInput() ?>
 
+    <?= $form->field($model, 'PERS_ID')->textInput() ?>
+
     <?= $form->field($model, 'PEDI_OBSERVACION')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'PEDI_DIRECCION')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'ESTA_ID')->textInput() ?>
-
-    <?= $form->field($model, 'PERS_ID')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
