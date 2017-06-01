@@ -24,6 +24,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+
+
+         // lanza una adventercia de los piezas que estan proximas a acabarse
+        'rowOptions'=> function ($modelInventarios)
             {
             if($modelInventarios->INVE_STOK<$modelInventarios->INVE_STOK_MIN && $modelInventarios->INVE_STOK=1)
                 {
