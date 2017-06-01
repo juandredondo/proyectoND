@@ -5,6 +5,8 @@ namespace app\controllers;
 use Yii;
 use app\models\ModelPersJuridicas;
 use app\models\BuscarPersJuridicas;
+use app\models\ModelPersonas;
+
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -63,15 +65,44 @@ class PersJuridicasController extends Controller
      */
     public function actionCreate()
     {
-        $model = new ModelPersJuridicas();
+        $modelPersJuridicas = new ModelPersJuridicas();
+        $modelPersonas= new ModelPersonas();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->PEJU_ID]);
-        } else {
+         //1.cargando todos los modelos de personas y personas Juridicas 
+
+        if ($modelPersonas->load(Yii::$app->request->post())&&
+            $modelPersJuridicas->load(Yii::$app->request->post()))
+         {
+
+    
+        //si se guarda el modelo personas, se le coloca su id  de llave foranea en la tabla personas Juridicas
+                
+        if($modelPersonas->save())
+        {
+
+            //guarda el ide de personas y lo agrega en la tabla personas Juridicas
+                
+                 $modelPersJuridicas->PERS_ID=$modelPersonas->PERS_ID;
+
+             //  si se guarda en personas Juridicas entonces muestra el respectivo detalle
+             if($modelPersJuridicas->save())
+                {
+                    return $this->redirect(['index']);
+                }
+            
+
+        }
+    }
+         // si no se han cargado los datos llamo al formulario create y le mando los modelos
+
+        else {
             return $this->render('create', [
-                'model' => $model,
+                'modelPersJuridicas' => $modelPersJuridicas,
+                'modelPersonas'      => $modelPersonas,
+                
             ]);
         }
+
     }
 
     /**
@@ -82,13 +113,32 @@ class PersJuridicasController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
+        $ModelPersJuridicas = ModelPersJuridicas::findModel($id);
+        $modelPersonas = modelPersonas::findOne($modelPersJuridicas->PERS_ID);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->PEJU_ID]);
+
+
+        if ($modelPersonas->load(Yii::$app->request->post()) && ($ModelPersJuridicas->load(Yii::$app->request->post()))){
+          if($modelPersonas->save())
+          {
+
+             //guarda el ide de personas y lo agrega en la tabla personas Juridicas
+
+            $modelPersJuridicas->PERS_ID=$modelPersonas->PERS_ID;
+                //  si se guarda en personas Juridicas entonces muestra el respectivo detalle
+                if($modelPersJuridicas->save())
+                {
+
+                return $this->redirect(['view', 'id' => $modelPersJuridicas->PEJU_ID]);
+
+               }
+                //guarda el ide de personas y lo agrega en la tabla personas Juridicas
+              }
         } else {
             return $this->render('update', [
-                'model' => $model,
+                
+                'modelPersJuridicas' => $modelPersJuridicas,
+                'modelPersonas'      => $modelPersonas,
             ]);
         }
     }
