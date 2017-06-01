@@ -52,13 +52,13 @@ class ModelPersNaturales extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'PENA_ID' => 'Pena  ID',
-            'PENA_NOMBRE' => 'Pena  Nombre',
-            'PENA_APELLIDO' => 'Pena  Apellido',
-            'PENA_FECHANAC' => 'Pena  Fechanac',
-            'PERS_ID' => 'Pers  ID',
-            'SEX_ID' => 'Sex  ID',
-            'TIID_ID' => 'Tiid  ID',
+            'PENA_ID' => 'ID Persona Natural',
+            'PENA_NOMBRE' => 'Nombre',
+            'PENA_APELLIDO' => 'Apellido',
+            'PENA_FECHANAC' => 'Fecha de Nacimiento',
+            'PERS_ID' => 'ID Persona',
+            'SEX_ID' => 'ID del Sexo',
+            'TIID_ID' => 'ID Tipo de Identificación',
         ];
     }
 

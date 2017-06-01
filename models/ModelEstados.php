@@ -38,8 +38,8 @@ class ModelEstados extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'ESTA_ID' => 'Esta  ID',
-            'ESTA_DETALLE' => 'Esta  Detalle',
+            'ESTA_ID' => 'ID del Estado',
+            'ESTA_DETALLE' => 'Estado del Detalle',
         ];
     }
 

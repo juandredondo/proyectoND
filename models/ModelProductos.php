@@ -43,9 +43,9 @@ class ModelProductos extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'PROD_ID' => 'Prod  ID',
-            'PROD_DESCRIPCION' => 'Prod  Descripcion',
-            'PROD_PRECIO' => 'Prod  Precio',
+            'PROD_ID' => 'ID Producto',
+            'PROD_DESCRIPCION' => 'Descripción del Producto',
+            'PROD_PRECIO' => 'Precio del Producto',
         ];
     }
 

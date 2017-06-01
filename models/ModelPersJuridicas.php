@@ -44,10 +44,10 @@ class ModelPersJuridicas extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'PEJU_ID' => 'Peju  ID',
-            'PEJU_NOMBRE' => 'Peju  Nombre',
-            'PEJU_OBJETOCOMERCIAL' => 'Peju  Objetocomercial',
-            'PERS_ID' => 'Pers  ID',
+            'PEJU_ID' => 'ID de la Pesona Juridica',
+            'PEJU_NOMBRE' => 'Nombre de la Persona Juridica',
+            'PEJU_OBJETOCOMERCIAL' => 'Objeto comercial',
+            'PERS_ID' => 'ID Persona',
         ];
     }
 

@@ -45,10 +45,10 @@ class ModelDetallePedidos extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'DEPE_ID' => 'Depe  ID',
-            'DEPE_CANTIDAD' => 'Depe  Cantidad',
-            'PROD_ID' => 'Prod  ID',
-            'PEDI_ID' => 'Pedi  ID',
+            'DEPE_ID' => 'ID de Detalle de Pedido',
+            'DEPE_CANTIDAD' => 'Cantidad de Detalle de Pedido',
+            'PROD_ID' => 'ID del Producto',
+            'PEDI_ID' => 'Id del Pedido',
         ];
     }
 

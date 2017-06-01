@@ -118,15 +118,34 @@ class PersNaturalesController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
+        $modelPersNaturales = ModelPersNaturales::findOne($id);
+        $modelPersonas = ModelPersonas::findOne($modelPersNaturales->PERS_ID);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->PENA_ID]);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
+
+
+        if ($modelPersonas->load(Yii::$app->request->post())&&
+            $modelPersNaturales->load(Yii::$app->request->post()))
+         {
+             if($modelPersonas->save())
+            {
+                //guarda el ide de personas y lo agrega en la tabla personas naturales
+                $modelPersNaturales->PERS_ID=$modelPersonas->PERS_ID;
+                //  si se guarda en personas naturales entonces muestra el respectivo detalle
+                if($modelPersNaturales->save())
+                {
+                    return $this->redirect(['view', 'id' => $modelPersNaturales->PENA_ID]);
+                }
+                //guarda el ide de personas y lo agrega en la tabla personas naturales
+            }
         }
+        else{
+
+            return $this->render('update', [
+
+                'modelPersNaturales' => $modelPersNaturales,
+                'modelPersonas'      => $modelPersonas,
+            ]);
+            }
     }
 
     /**

@@ -43,9 +43,9 @@ class ModelFavoritos extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'FAVO_ID' => 'Favo  ID',
-            'PROD_ID' => 'Prod  ID',
-            'PERS_ID' => 'Pers  ID',
+            'FAVO_ID' => 'ID del Favorito',
+            'PROD_ID' => 'ID del Producto',
+            'PERS_ID' => 'ID de la Persona',
         ];
     }
 

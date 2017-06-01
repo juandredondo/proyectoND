@@ -8,11 +8,11 @@ use yii\widgets\DetailView;
 
 $this->title = $model->FAVO_ID;
 $this->params['breadcrumbs'][] = ['label' => 'Model Favoritos', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = 'Favorito';
 ?>
 <div class="model-favoritos-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?= Html::encode('Favorito') ?></h1>
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->FAVO_ID], ['class' => 'btn btn-primary']) ?>

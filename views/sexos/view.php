@@ -8,11 +8,11 @@ use yii\widgets\DetailView;
 
 $this->title = $model->SEX_ID;
 $this->params['breadcrumbs'][] = ['label' => 'Model Sexos', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = 'Sexo';
 ?>
 <div class="model-sexos-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?= Html::encode('Sexo') ?></h1>
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->SEX_ID], ['class' => 'btn btn-primary']) ?>

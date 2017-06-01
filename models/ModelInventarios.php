@@ -46,12 +46,12 @@ class ModelInventarios extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'INVE_ID' => 'Inve  ID',
-            'INVE_PRECIO' => 'Inve  Precio',
-            'INVE_STOK' => 'Inve  Stok',
-            'INVE_STOK_MIN' => 'Inve  Stok  Min',
-            'INVE_ESTADO' => 'Inve  Estado',
-            'PROD_ID' => 'Prod  ID',
+            'INVE_ID' => 'ID del Inventario',
+            'INVE_PRECIO' => 'Precio de Inventario',
+            'INVE_STOK' => 'Inventario Stok ',
+            'INVE_STOK_MIN' => 'Inventario Stok  Min',
+            'INVE_ESTADO' => 'Estado del Inventario',
+            'PROD_ID' => 'ID Producto',
         ];
     }
 

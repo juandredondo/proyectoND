@@ -39,8 +39,8 @@ class ModelTipoIden extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'TIID_ID' => 'Tiid  ID',
-            'TIID_DESCRIPCION' => 'Tiid  Descripcion',
+            'TIID_ID' => 'ID Tipo de Identificación',
+            'TIID_DESCRIPCION' => 'Descripción',
         ];
     }
 

@@ -8,11 +8,11 @@ use yii\widgets\DetailView;
 
 $this->title = $model->TIID_ID;
 $this->params['breadcrumbs'][] = ['label' => 'Model Tipo Idens', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = 'Tipo de Identificacion';
 ?>
 <div class="model-tipo-iden-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?= Html::encode('Tipo de Identificacion') ?></h1>
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->TIID_ID], ['class' => 'btn btn-primary']) ?>

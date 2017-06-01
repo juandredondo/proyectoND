@@ -8,11 +8,11 @@ use yii\widgets\DetailView;
 
 $this->title = $model->INVE_ID;
 $this->params['breadcrumbs'][] = ['label' => 'Model Inventarios', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = 'Inventario';
 ?>
 <div class="model-inventarios-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?= Html::encode('Inventario') ?></h1>
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->INVE_ID], ['class' => 'btn btn-primary']) ?>

@@ -50,12 +50,12 @@ class ModelPedidos extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'PEDI_ID' => 'Pedi  ID',
-            'PEDI_FECHA' => 'Pedi  Fecha',
-            'PEDI_OBSERVACION' => 'Pedi  Observacion',
-            'PEDI_DIRECCION' => 'Pedi  Direccion',
-            'ESTA_ID' => 'Esta  ID',
-            'PERS_ID' => 'Pers  ID',
+            'PEDI_ID' => 'ID del Pedido',
+            'PEDI_FECHA' => 'Fecha del Pedido',
+            'PEDI_OBSERVACION' => 'Observación del Pedido',
+            'PEDI_DIRECCION' => 'Dirección del Pedido',
+            'ESTA_ID' => 'Estado del Pedido',
+            'PERS_ID' => 'ID Persona',
         ];
     }
 
