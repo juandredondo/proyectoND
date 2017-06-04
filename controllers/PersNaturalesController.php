@@ -46,11 +46,13 @@ class PersNaturalesController extends Controller
     public function actionIndex()
     {
         $searchModel = new BuscarPersNaturales();
+    
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+
         ]);
     }
 

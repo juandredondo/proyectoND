@@ -19,8 +19,8 @@ class BuscarProductos extends ModelProductos
     {
         return [
             [['PROD_ID'], 'integer'],
-            [['PROD_DESCRIPCION'], 'safe'],
-            [['PROD_PRECIO'], 'number'],
+            [['PROD_DESCRIPCION', 'PROD_FECHA_VENCIMIENTO'], 'safe'],
+       
         ];
     }
 
@@ -61,7 +61,8 @@ class BuscarProductos extends ModelProductos
         // grid filtering conditions
         $query->andFilterWhere([
             'PROD_ID' => $this->PROD_ID,
-            'PROD_PRECIO' => $this->PROD_PRECIO,
+            
+            'PROD_FECHA_VENCIMIENTO' => $this->PROD_FECHA_VENCIMIENTO,
         ]);
 
         $query->andFilterWhere(['like', 'PROD_DESCRIPCION', $this->PROD_DESCRIPCION]);

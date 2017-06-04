@@ -9,11 +9,11 @@ use Yii;
  *
  * @property integer $DEPE_ID
  * @property double $DEPE_CANTIDAD
- * @property integer $PROD_ID
+ * @property integer $INVE_ID
  * @property integer $PEDI_ID
  *
+ * @property TblInvetarios $iNVE
  * @property TblPedidos $pEDI
- * @property TblProductos $pROD
  */
 class ModelDetallePedidos extends \yii\db\ActiveRecord
 {
@@ -32,10 +32,10 @@ class ModelDetallePedidos extends \yii\db\ActiveRecord
     {
         return [
             [['DEPE_CANTIDAD'], 'number'],
-            [['PROD_ID', 'PEDI_ID'], 'required'],
-            [['PROD_ID', 'PEDI_ID'], 'integer'],
+            [['INVE_ID', 'PEDI_ID'], 'required'],
+            [['INVE_ID', 'PEDI_ID'], 'integer'],
+            [['INVE_ID'], 'exist', 'skipOnError' => true, 'targetClass' => ModelInventarios::className(), 'targetAttribute' => ['INVE_ID' => 'INVE_ID']],
             [['PEDI_ID'], 'exist', 'skipOnError' => true, 'targetClass' => ModelPedidos::className(), 'targetAttribute' => ['PEDI_ID' => 'PEDI_ID']],
-            [['PROD_ID'], 'exist', 'skipOnError' => true, 'targetClass' => ModelProductos::className(), 'targetAttribute' => ['PROD_ID' => 'PROD_ID']],
         ];
     }
 
@@ -45,12 +45,21 @@ class ModelDetallePedidos extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'DEPE_ID' => 'ID de Detalle de Pedido',
-            'DEPE_CANTIDAD' => 'Cantidad de Detalle de Pedido',
-            'PROD_ID' => 'ID del Producto',
-            'PEDI_ID' => 'Id del Pedido',
+            'DEPE_ID' => 'Depe  ID',
+            'DEPE_CANTIDAD' => 'Depe  Cantidad',
+            'INVE_ID' => 'Inve  ID',
+            'PEDI_ID' => 'Pedi  ID',
         ];
     }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getINVE()
+    {
+        return $this->hasOne(ModelInventarios::className(), ['INVE_ID' => 'INVE_ID']);
+    }
+
 
     /**
      * @return \yii\db\ActiveQuery
@@ -58,13 +67,5 @@ class ModelDetallePedidos extends \yii\db\ActiveRecord
     public function getPEDI()
     {
         return $this->hasOne(ModelPedidos::className(), ['PEDI_ID' => 'PEDI_ID']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getPROD()
-    {
-        return $this->hasOne(ModelProductos::className(), ['PROD_ID' => 'PROD_ID']);
     }
 }

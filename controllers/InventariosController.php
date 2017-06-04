@@ -33,6 +33,7 @@ class InventariosController extends Controller
      * Lists all ModelInventarios models.
      * @return mixed
      */
+    //este index muestra los inventario activos
     public function actionIndex()
     {
         $searchModel = new BuscarInventarios();
@@ -43,6 +44,19 @@ class InventariosController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
+
+    //este index 2 muestra los inventarios desactiados
+      public function actionIndex2()
+    {
+        $searchModel = new BuscarInventarios();
+        $dataProvider = $searchModel->search2(Yii::$app->request->queryParams);
+
+        return $this->render('inven_inactivos', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
 
     /**
      * Displays a single ModelInventarios model.

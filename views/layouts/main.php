@@ -40,18 +40,20 @@ AppAsset::register($this);
             [
              'label' => 'Basicos',
                 'items' => [
-                ['label' => 'Personas Naturales', 'url' => '/proyectoND/web/index.php?r=pers-naturales'],
-                ['label' => 'Personas Juridicas', 'url' => '/proyectoND/web/index.php?r=pers-juridicas'],
+              
                 ['label' => 'Sexos', 'url' => '/proyectoND/web/index.php?r=sexos'],
                 ['label' => 'Tipos de Identificacion', 'url' => '/proyectoND/web/index.php?r=tipo-iden'],
+                ['label' => 'Estado de los Pedidos', 'url' => '/proyectoND/web/index.php?r=estados'],
+                ['label' => 'Detalle de los Pedidos', 'url' => '/proyectoND/web/index.php?r=detalle-pedidos'],
                 ]],
   
              [
              'label' => 'Pedidos',
                 'items' => [
+                ['label' => 'Personas Naturales', 'url' => '/proyectoND/web/index.php?r=pers-naturales'],
+                ['label' => 'Personas Juridicas', 'url' => '/proyectoND/web/index.php?r=pers-juridicas'],
                 ['label' => 'Pedidos', 'url' => '/proyectoND/web/index.php?r=pedidos'],
-                ['label' => 'Estado de los Pedidos', 'url' => '/proyectoND/web/index.php?r=estados'],
-                ['label' => 'Detalle de los Pedidos', 'url' => '/proyectoND/web/index.php?r=detalle-pedidos'],
+               
                 ]],
 
              [

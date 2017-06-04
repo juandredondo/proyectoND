@@ -4,6 +4,10 @@ namespace app\controllers;
 
 use Yii;
 use app\models\ModelPedidos;
+use app\models\ModelPersonas;
+use app\models\ModelDetallePedidos;
+use app\models\ModelEstados;
+
 use app\models\BuscarPedidos;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -63,13 +67,26 @@ class PedidosController extends Controller
      */
     public function actionCreate()
     {
-        $model = new ModelPedidos();
+        //1.se  declaran los diferentes objetos de los modelos correspondientes
+        $modelPedidos = new ModelPedidos();
+        $modelDetallePedido= new ModelDetallePedidos();
+        $modelEstados=new ModelEstados();
+       
+        //2. se pregunta si se cargaron correctamente el modelo de pedidos
+        if ($modelPedidos->load(Yii::$app->request->post())) {
+            //3.  Pregunta que si se guardaron los datos cargados en el modelo
+            if($modelPedidos->save())
+            {
+                //mando por url el id del pedido
+                return $this->redirect(['detalle-pedidos/create','idPedido' => $modelPedidos->PEDI_ID]);
+            }
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->PEDI_ID]);
         } else {
+            //si el modelo no se ha cargado todavia manda al a vista create y de le mandan los modelos correspondientes  
             return $this->render('create', [
-                'model' => $model,
+                'modelPedidos' => $modelPedidos,
+                'modelEstados' => $modelEstados,
+
             ]);
         }
     }

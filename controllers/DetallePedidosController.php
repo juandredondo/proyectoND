@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use app\models\ModelDetallePedidos;
 use app\models\BuscarDetallePedidos;
+use app\models\ModelProductos;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -64,12 +65,23 @@ class DetallePedidosController extends Controller
     public function actionCreate()
     {
         $model = new ModelDetallePedidos();
+        $searchModel = new BuscarDetallePedidos();
+        $modelProductos=new ModelProductos();
+
+
+        $dataProvider = $searchModel->search2(Yii::$app->request->get('idPedido'));
+
+        $varIdPedido=Yii::$app->request->get('idPedido');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->DEPE_ID]);
-        } else {
+            return $this->redirect(['create', 'idPedido' =>$varIdPedido]);
+        } 
+        else {
             return $this->render('create', [
                 'model' => $model,
+                'searchModel' => $searchModel,
+                'dataProvider' => $dataProvider,
+                'modelProductos'=>$modelProductos,
             ]);
         }
     }

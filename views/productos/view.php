@@ -8,11 +8,11 @@ use yii\widgets\DetailView;
 
 $this->title = $model->PROD_ID;
 $this->params['breadcrumbs'][] = ['label' => 'Model Productos', 'url' => ['index']];
-$this->params['breadcrumbs'][] = 'Producto';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="model-productos-view">
 
-    <h1><?= Html::encode('Producto') ?></h1>
+    <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->PROD_ID], ['class' => 'btn btn-primary']) ?>
@@ -30,7 +30,8 @@ $this->params['breadcrumbs'][] = 'Producto';
         'attributes' => [
             'PROD_ID',
             'PROD_DESCRIPCION',
-            'PROD_PRECIO',
+      
+            'PROD_FECHA_VENCIMIENTO',
         ],
     ]) ?>
 

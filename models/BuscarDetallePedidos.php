@@ -18,7 +18,7 @@ class BuscarDetallePedidos extends ModelDetallePedidos
     public function rules()
     {
         return [
-            [['DEPE_ID', 'PROD_ID', 'PEDI_ID'], 'integer'],
+            [['DEPE_ID', 'INVE_ID', 'PEDI_ID'], 'integer'],
             [['DEPE_CANTIDAD'], 'number'],
         ];
     }
@@ -61,10 +61,24 @@ class BuscarDetallePedidos extends ModelDetallePedidos
         $query->andFilterWhere([
             'DEPE_ID' => $this->DEPE_ID,
             'DEPE_CANTIDAD' => $this->DEPE_CANTIDAD,
-            'PROD_ID' => $this->PROD_ID,
+            'INVE_ID' => $this->INVE_ID,
             'PEDI_ID' => $this->PEDI_ID,
         ]);
 
+        return $dataProvider;
+    }
+    ///muestra la lista de los elemtos que pertenecen a un mantenimiento en especifico
+    public function search2($params)
+    {    
+       $consulta='select * from tbl_detallepedido where PEDI_ID= '.$params;
+        $query = ModelDetallePedidos::findBySql($consulta);
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+
+        if (!$this->validate()) {
+            return $dataProvider;
+        }
         return $dataProvider;
     }
 }

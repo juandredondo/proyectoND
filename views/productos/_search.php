@@ -19,7 +19,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'PROD_DESCRIPCION') ?>
 
-    <?= $form->field($model, 'PROD_PRECIO') ?>
+    <?= $form->field($model, 'PROD_FECHA_VENCIMIENTO') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

@@ -8,11 +8,11 @@ use yii\widgets\DetailView;
 
 $this->title = $model->DEPE_ID;
 $this->params['breadcrumbs'][] = ['label' => 'Model Detalle Pedidos', 'url' => ['index']];
-$this->params['breadcrumbs'][] = 'Detalle de Pedido';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="model-detalle-pedidos-view">
 
-    <h1><?= Html::encode('Detalle de Pedido') ?></h1>
+    <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->DEPE_ID], ['class' => 'btn btn-primary']) ?>
@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = 'Detalle de Pedido';
         'attributes' => [
             'DEPE_ID',
             'DEPE_CANTIDAD',
-            'PROD_ID',
+            'INVE_ID',
             'PEDI_ID',
         ],
     ]) ?>

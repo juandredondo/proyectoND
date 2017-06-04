@@ -65,6 +65,43 @@ class BuscarInventarios extends ModelInventarios
             'INVE_STOK' => $this->INVE_STOK,
             'INVE_STOK_MIN' => $this->INVE_STOK_MIN,
             'PROD_ID' => $this->PROD_ID,
+            'INVE_ESTADO'=>'activo',
+           
+        ]);
+
+        $query->andFilterWhere(['like', 'INVE_ESTADO', $this->INVE_ESTADO]);
+
+        return $dataProvider;
+    }
+
+    // esta funcion permite buscar en los inventarios de estado desactivo 
+
+     public function search2($params)
+    {
+        $query = ModelInventarios::find();
+
+        // add conditions that should always apply here
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+
+        $this->load($params);
+
+        if (!$this->validate()) {
+            // uncomment the following line if you do not want to return any records when validation fails
+            // $query->where('0=1');
+            return $dataProvider;
+        }
+
+        // grid filtering conditions
+        $query->andFilterWhere([
+            'INVE_ID' => $this->INVE_ID,
+            'INVE_PRECIO' => $this->INVE_PRECIO,
+            'INVE_STOK' => $this->INVE_STOK,
+            'INVE_STOK_MIN' => $this->INVE_STOK_MIN,
+            'PROD_ID' => $this->PROD_ID,
+            'INVE_ESTADO'=>'desactivado',
         ]);
 
         $query->andFilterWhere(['like', 'INVE_ESTADO', $this->INVE_ESTADO]);

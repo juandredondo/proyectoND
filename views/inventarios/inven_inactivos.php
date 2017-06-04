@@ -18,8 +18,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Nuevo', ['create'], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Inventarios Desactivados', ['index2'], ['class' => '  btn btn-info']) ?>
+        <?= Html::a('Nuevo Inventario ', ['create'], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Inventarios Activos', ['index'], ['class' => 'btn btn-info']) ?>
+       
     </p>
 
     <?= GridView::widget([

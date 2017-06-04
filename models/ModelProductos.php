@@ -32,7 +32,8 @@ class ModelProductos extends \yii\db\ActiveRecord
     {
         return [
             [['PROD_PRECIO'], 'required'],
-            [['PROD_PRECIO'], 'number'],
+           
+            [['PROD_FECHA_VENCIMIENTO'], 'safe'], 
             [['PROD_DESCRIPCION'], 'string', 'max' => 30],
         ];
     }
@@ -45,7 +46,7 @@ class ModelProductos extends \yii\db\ActiveRecord
         return [
             'PROD_ID' => 'ID Producto',
             'PROD_DESCRIPCION' => 'Descripción del Producto',
-            'PROD_PRECIO' => 'Precio del Producto',
+            'PROD_FECHA_VENCIMIENTO' => 'Prod Fecha Vencimiento',
         ];
     }
 
