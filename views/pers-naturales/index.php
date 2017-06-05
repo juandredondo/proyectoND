@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'PENA_NOMBRE',
             'PENA_APELLIDO',
             'pERS.PERS_TELEFONO',
-            'PENA_FECHANAC',
+          // 'PENA_FECHANAC',
             'pERS.PERS_EMAIL',
             // 'PERS_ID',
             // 'SEX_ID',

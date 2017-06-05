@@ -9,7 +9,7 @@ use yii\helpers\ArrayHelper;
 /* @var $searchModel app\models\BuscarInventarios */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Inventarios';
+$this->title = 'Inventarios Activos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="model-inventarios-index">
@@ -48,12 +48,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'INVE_ID',
+           // 'INVE_ID',
             'pROD.PROD_DESCRIPCION',
             'INVE_PRECIO',
             'INVE_STOK',
             'INVE_STOK_MIN',
-            'INVE_ESTADO',
+            //'INVE_ESTADO',
             // 'PROD_ID',
 
            

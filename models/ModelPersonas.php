@@ -47,7 +47,7 @@ class ModelPersonas extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'PERS_ID' => 'ID',
+            'PERS_ID' => 'Id Persona',
             'PERS_IDENTIFICACION' => 'Identificacion',
             'PERS_TELEFONO' => 'Telefono',
             'PERS_DIRECCION' =>'Direccion',

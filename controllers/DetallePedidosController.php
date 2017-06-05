@@ -97,7 +97,7 @@ class DetallePedidosController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->DEPE_ID]);
+            return $this->redirect(['create', 'idPedido' => $model->DEPE_ID]);
         } else {
             return $this->render('update', [
                 'model' => $model,

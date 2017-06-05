@@ -29,7 +29,23 @@ $this->params['breadcrumbs'][] = $this->title;
             'PEJU_OBJETOCOMERCIAL',
             'PERS_ID',
 
-            ['class' => 'yii\grid\ActionColumn'],
+           ['class' => 'yii\grid\ActionColumn',
+
+           
+            'template' => '{update}{delete}{view} {pedidos}',
+                'buttons'  =>
+                 [
+                   
+                     'pedidos'=>function($model, $key1,$url){
+                                $url=Yii::$app->urlManager->createUrl(['pedidos/create', 'idPersona' => $key1->PERS_ID]);
+                            return Html::a('<span class=" glyphicon glyphicon-check "> </span>', $url ,
+                                [
+                                    'title' => \Yii::t('yii', 'Crear Pedido'),
+                                ]);    
+
+                            }, 
+                ],
+             ],
         ],
     ]); ?>
 </div>

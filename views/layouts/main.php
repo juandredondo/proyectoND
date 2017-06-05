@@ -52,7 +52,7 @@ AppAsset::register($this);
                 'items' => [
                 ['label' => 'Personas Naturales', 'url' => '/proyectoND/web/index.php?r=pers-naturales'],
                 ['label' => 'Personas Juridicas', 'url' => '/proyectoND/web/index.php?r=pers-juridicas'],
-                ['label' => 'Pedidos', 'url' => '/proyectoND/web/index.php?r=pedidos'],
+                ['label' => 'Listado de Pedidos', 'url' => '/proyectoND/web/index.php?r=pedidos'],
                
                 ]],
 

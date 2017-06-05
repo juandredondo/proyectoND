@@ -9,7 +9,7 @@ use yii\helpers\ArrayHelper;
 /* @var $searchModel app\models\BuscarInventarios */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Inventarios';
+$this->title = 'Inventarios Desactivados';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="model-inventarios-index">
@@ -54,7 +54,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'INVE_PRECIO',
             'INVE_STOK',
             'INVE_STOK_MIN',
-            'INVE_ESTADO',
+            //'INVE_ESTADO',
             // 'PROD_ID',
 
            

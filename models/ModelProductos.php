@@ -31,7 +31,7 @@ class ModelProductos extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['PROD_PRECIO'], 'required'],
+
            
             [['PROD_FECHA_VENCIMIENTO'], 'safe'], 
             [['PROD_DESCRIPCION'], 'string', 'max' => 30],
