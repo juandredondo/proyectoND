@@ -17,7 +17,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= $this->render('_form', [
         //le manda por parametro al formulario el objeto de los modelos de personas Juridicas
         'modelPersJuridicas' => $modelPersJuridicas,
-        
         'modelPersonas'      => $modelPersonas,
     ]) ?>
 
