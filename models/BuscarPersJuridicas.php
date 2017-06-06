@@ -19,7 +19,7 @@ class BuscarPersJuridicas extends ModelPersJuridicas
     {
         return [
             [['PEJU_ID', 'PERS_ID'], 'integer'],
-            [['PEJU_NOMBRE', 'PEJU_OBJETOCOMERCIAL'], 'safe'],
+            [[ 'PEJU_OBJETOCOMERCIAL'], 'safe'],
         ];
     }
 
@@ -63,8 +63,7 @@ class BuscarPersJuridicas extends ModelPersJuridicas
             'PERS_ID' => $this->PERS_ID,
         ]);
 
-        $query->andFilterWhere(['like', 'PEJU_NOMBRE', $this->PEJU_NOMBRE])
-            ->andFilterWhere(['like', 'PEJU_OBJETOCOMERCIAL', $this->PEJU_OBJETOCOMERCIAL]);
+        $query->andFilterWhere(['like', 'PEJU_OBJETOCOMERCIAL', $this->PEJU_OBJETOCOMERCIAL]);
 
         return $dataProvider;
     }

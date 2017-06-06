@@ -113,12 +113,10 @@ class PersJuridicasController extends Controller
      */
     public function actionUpdate($id)
     {
-        $ModelPersJuridicas = ModelPersJuridicas::findModel($id);
-        $modelPersonas = modelPersonas::findOne($modelPersJuridicas->PERS_ID);
+         $modelPersJuridicas =ModelPersJuridicas::findOne($id);
+        $modelPersonas = ModelPersonas::findOne($modelPersJuridicas->PERS_ID);
 
-
-
-        if ($modelPersonas->load(Yii::$app->request->post()) && ($ModelPersJuridicas->load(Yii::$app->request->post()))){
+        if ($modelPersonas->load(Yii::$app->request->post()) && ($modelPersJuridicas->load(Yii::$app->request->post()))){
           if($modelPersonas->save())
           {
 
@@ -137,7 +135,7 @@ class PersJuridicasController extends Controller
         } else {
             return $this->render('update', [
                 
-                'modelPersJuridicas' => $modelPersJuridicas,
+                'model' => $modelPersJuridicas,
                 'modelPersonas'      => $modelPersonas,
             ]);
         }

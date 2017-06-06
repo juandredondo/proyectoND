@@ -38,7 +38,7 @@ class ModelPersNaturales extends \yii\db\ActiveRecord
             [['PENA_FECHANAC'], 'safe'],
             [['PERS_ID', 'SEX_ID', 'TIID_ID'], 'required'],
             [['PERS_ID', 'SEX_ID', 'TIID_ID'], 'integer'],
-            [['PENA_NOMBRE', 'PENA_APELLIDO'], 'string', 'max' => 30],
+           
             [['PERS_ID'], 'unique'],
             [['PERS_ID'], 'exist', 'skipOnError' => true, 'targetClass' => ModelPersonas::className(), 'targetAttribute' => ['PERS_ID' => 'PERS_ID']],
             [['SEX_ID'], 'exist', 'skipOnError' => true, 'targetClass' => ModelSexos::className(), 'targetAttribute' => ['SEX_ID' => 'SEX_ID']],
@@ -53,8 +53,6 @@ class ModelPersNaturales extends \yii\db\ActiveRecord
     {
         return [
             'PENA_ID' => 'ID Persona Natural',
-            'PENA_NOMBRE' => 'Nombre',
-            'PENA_APELLIDO' => 'Apellido',
             'PENA_FECHANAC' => 'Fecha de Nacimiento',
             'PERS_ID' => 'ID Persona',
             'SEX_ID' => 'ID del Sexo',

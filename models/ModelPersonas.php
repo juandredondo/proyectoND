@@ -35,8 +35,8 @@ class ModelPersonas extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['PERS_IDENTIFICACION', 'PERS_TELEFONO', 'PERS_DIRECCION'], 'string', 'max' => 30],
-            [['PERS_EMAIL'],'email'],
+            [['PERS_IDENTIFICACION', 'PERS_TELEFONO', 'PERS_DIRECCION', 'PERS_EMAIL'], 'string', 'max' => 30],
+           [['PERS_NOMBRE'], 'string', 'max' => 45],
             [['PERS_IDENTIFICACION'], 'unique'],
         ];
     }

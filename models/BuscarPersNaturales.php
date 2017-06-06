@@ -19,7 +19,7 @@ class BuscarPersNaturales extends ModelPersNaturales
     {
         return [
             [['PENA_ID', 'PERS_ID', 'SEX_ID', 'TIID_ID'], 'integer'],
-            [['PENA_NOMBRE', 'PENA_APELLIDO', 'PENA_FECHANAC'], 'safe'],
+            [[ 'PENA_FECHANAC'], 'safe'],
         ];
     }
 
@@ -66,9 +66,7 @@ class BuscarPersNaturales extends ModelPersNaturales
             'TIID_ID' => $this->TIID_ID,
         ]);
 
-        $query->andFilterWhere(['like', 'PENA_NOMBRE', $this->PENA_NOMBRE])
-            ->andFilterWhere(['like', 'PENA_APELLIDO', $this->PENA_APELLIDO]);
-
+        
         return $dataProvider;
     }
 }

@@ -29,8 +29,7 @@ $this->params['breadcrumbs'][] = 'Persona Natural';
         'model' => $model,
         'attributes' => [
             'PENA_ID',
-            'PENA_NOMBRE',
-            'PENA_APELLIDO',
+         
             'PENA_FECHANAC',
             'PERS_ID',
             'SEX_ID',

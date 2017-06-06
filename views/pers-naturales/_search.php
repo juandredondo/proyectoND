@@ -17,9 +17,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'PENA_ID') ?>
 
-    <?= $form->field($model, 'PENA_NOMBRE') ?>
-
-    <?= $form->field($model, 'PENA_APELLIDO') ?>
 
     <?= $form->field($model, 'PENA_FECHANAC') ?>
 

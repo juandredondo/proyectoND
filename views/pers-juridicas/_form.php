@@ -15,16 +15,15 @@ use yii\jui\DatePicker;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($modelPersJuridicas, 'PEJU_NOMBRE')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($modelPersJuridicas, 'PEJU_OBJETOCOMERCIAL')->textInput(['maxlength' => true]) ?>
+   	 <?= $form->field($modelPersonas, 'PERS_NOMBRE')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'PEJU_OBJETOCOMERCIAL')->textInput(['maxlength' => true]) ?>
     <?= $form->field($modelPersonas, 'PERS_TELEFONO')->textInput(['maxlength' => true]) ?>
     <?= $form->field($modelPersonas, 'PERS_DIRECCION')->textInput(['maxlength' => true]) ?>
     <?= $form->field($modelPersonas, 'PERS_EMAIL')->textInput(['maxlength' => true]) ?>
 
 
     <div class="form-group">
-        <?= Html::submitButton($modelPersJuridicas->isNewRecord ? 'Create' : 'Update', ['class' => $modelPersJuridicas->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
 

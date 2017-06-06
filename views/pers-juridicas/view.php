@@ -8,11 +8,11 @@ use yii\widgets\DetailView;
 
 $this->title = $model->PEJU_ID;
 $this->params['breadcrumbs'][] = ['label' => 'Model Pers Juridicas', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $'Persona Juridica';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="model-pers-juridicas-view">
 
-    <h1><?= Html::encode('Persona Juridica') ?></h1>
+    <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->PEJU_ID], ['class' => 'btn btn-primary']) ?>
@@ -29,7 +29,6 @@ $this->params['breadcrumbs'][] = $'Persona Juridica';
         'model' => $model,
         'attributes' => [
             'PEJU_ID',
-            'PEJU_NOMBRE',
             'PEJU_OBJETOCOMERCIAL',
             'PERS_ID',
         ],

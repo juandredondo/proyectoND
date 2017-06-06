@@ -22,9 +22,8 @@ use yii\jui\DatePicker;
 
 
      <?= $form->field($modelPersonas, 'PERS_IDENTIFICACION')->textInput(['maxlength' => true]) ?>
-    <?= $form->field($modelPersNaturales, 'PENA_NOMBRE')->textInput(['maxlength' => true]) ?>
-    <?= $form->field($modelPersNaturales, 'PENA_APELLIDO')->textInput(['maxlength' => true]) ?>
-
+    <?= $form->field($modelPersonas, 'PERS_NOMBRE')->textInput(['maxlength' => true]) ?>
+    
     <!-- MUESTRA LOS SEXOS EN UN SELECT  -->
     <?= $form->field($modelPersNaturales, 'SEX_ID')->dropDownList(ArrayHelper::map(modelSexos::find()->asArray()->all(), 'SEX_ID', 'SEX_NOMBRE'), ['prompt'=>'-Seleccione una opcion-'])?>
 

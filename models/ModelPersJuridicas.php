@@ -32,7 +32,7 @@ class ModelPersJuridicas extends \yii\db\ActiveRecord
         return [
             [['PERS_ID'], 'required'],
             [['PERS_ID'], 'integer'],
-            [['PEJU_NOMBRE', 'PEJU_OBJETOCOMERCIAL'], 'string', 'max' => 30],
+            [[ 'PEJU_OBJETOCOMERCIAL'], 'string', 'max' => 30],
             [['PERS_ID'], 'unique'],
             [['PERS_ID'], 'exist', 'skipOnError' => true, 'targetClass' => ModelPersonas::className(), 'targetAttribute' => ['PERS_ID' => 'PERS_ID']],
         ];
@@ -45,7 +45,6 @@ class ModelPersJuridicas extends \yii\db\ActiveRecord
     {
         return [
             'PEJU_ID' => 'ID de la Pesona Juridica',
-            'PEJU_NOMBRE' => 'Nombre de la Persona Juridica',
             'PEJU_OBJETOCOMERCIAL' => 'Objeto comercial',
             'PERS_ID' => 'ID Persona',
         ];
