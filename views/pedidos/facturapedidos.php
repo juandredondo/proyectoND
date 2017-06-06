@@ -159,29 +159,26 @@ footer {
       <div id="logo">
         
       </div>
-      <h1>SISTEMA VERTICAL 2020</h1>
+      <h1>NIÑO DISTRIBUCIONES</h1>
       <div id="company" class="clearfix">
-        <div>Sistema Vertical 2020</div>
-        <div> calle 13 # 7-35,<br />Colombia</div>
+        <div>NIÑO DISTRIBUCIONES</div>
+        <div> KRA 7H # 7-35,<br />Colombia</div>
         <div>(316) 577-4040</div>
-        <div><a href="">sistemavertical@gmail.com</a></div>
+        <div><a href="">NINODISTRIBUCIONES@gmail.com</a></div>
       </div>
       <div id="project">
-        <div>FACTURA N°: '.$dataProvider[0]['servi_id'].'</div>
+        <div>FACTURA N°: '.$dataProvider[0]['PEDI_ID'].'</div>
         <div><span>FECHA: </span> '.date('Y/ M/ D').'</div>
        
  
         <br>
         <br>
         <div><span></span> INFORMACION DEL CLIENTE</div>
-        <div><span>IDENTIFICACION: </span> '.$dataProvider[0]['pers_cedula'].'</div>
-        <div><span>CLIENTE: </span> '.$dataProvider[0]['pers_nombre'].'</div>
-        <div><span>TELEFONO: </span> '.$dataProvider[0]['pers_telefono'].'</div>
+        <div><span>IDENTIFICACION: </span> '.$dataProvider[0]['PERS_IDENTIFICACION'].'</div>
+        <div><span>CLIENTE: </span> '.$dataProvider[0]['PERS_NOMBRE'].'</div>
+        <div><span>TELEFONO: </span> '.$dataProvider[0]['PERS_TELEFONO'].'</div>
 
-        <br>
-         <div><span></span> INFORMACION DEL EQUIPO </div>
-        <div><span>EQUIPO: </span> '.$dataProvider[0]['eqpo_nombre'].'</div>
-        <div><span>SERIE: </span> '.$dataProvider[0]['eqpo_serie'].'</div>
+
     
       </div>
     </header>
@@ -202,24 +199,6 @@ footer {
         ';
         //bandera viene por parametro desde el controlador  de clientes
    
-            $html.=' 
-             <tr>
-                <td class=""></td>
-                <td class="desc"> Diagnostico</td>
-                <td class="unit">$'.$dataProvider[0]['servi_vr_diag'].'</td>
-                <td class="qty">1</td>
-                <td class="total">$'.$dataProvider[0]['servi_vr_diag'].'</td>
-            </tr> ';
-             
-            $html.=' 
-              <tr>
-                <td class=""></td>
-                <td class="desc"> Vr Mantenimiento</td>
-                <td class="unit">$'.$dataProvider[0]['mtto_vr_manoObra'].'</td>
-                <td class="qty">1</td>
-                <td class="total">$'.$dataProvider[0]['mtto_vr_manoObra'].'</td>
-             </tr>';
-            $total=$dataProvider[0]['servi_vr_diag']+$dataProvider[0]['mtto_vr_manoObra'];
 
            
                 foreach ($dataProvider as $dataProvider) 
@@ -227,13 +206,13 @@ footer {
                      $html.='
                      <tr>
                         <td class=""></td>
-                        <td class="desc">'.$dataProvider['pieza_referencia'].'</td>
-                        <td class="unit">$'.$dataProvider['inven_precio'].'</td>
-                        <td class="qty">'.$dataProvider['deta_cant'].'</td>
-                        <td class="total">$'.($dataProvider['deta_cant']*$dataProvider['inven_precio']).'</td>
+                        <td class="desc">'.$dataProvider['PROD_DESCRIPCION'].'</td>
+                        <td class="unit">$'.$dataProvider['INVE_PRECIO'].'</td>
+                        <td class="qty">'.$dataProvider['DEPE_CANTIDAD'].'</td>
+                        <td class="total">$'.($dataProvider['DEPE_CANTIDAD']*$dataProvider['INVE_PRECIO']).'</td>
                     </tr>';
 
-                     $total=$total+($dataProvider['deta_cant']*$dataProvider['inven_precio']);
+                     $total=$total+($dataProvider['DEPE_CANTIDAD']*$dataProvider['INVE_PRECIO']);
                 }
             
 

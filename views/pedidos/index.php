@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'PEDI_ID',
-            'pERS.PERS_ID',
+            'pERS.PERS_NOMBRE',
             'PEDI_FECHA',
            //    'PEDI_OBSERVACION',
             'PEDI_DIRECCION',
@@ -43,10 +43,10 @@ $this->params['breadcrumbs'][] = $this->title;
                  [
                    
                      'pedidos'=>function($model, $key1,$url){
-                                $url=Yii::$app->urlManager->createUrl(['reportes/facturaPedidos', 'idPersona' => $key1->PERS_ID]);
+                                $url=Yii::$app->urlManager->createUrl(['pedidos/generarpdf', 'idpedido' => $key1->PEDI_ID]);
                             return Html::a('<span class=" glyphicon glyphicon-file"> </span>', $url ,
                                 [
-                                    'title' => \Yii::t('yii', 'Crear Pedido'),
+                                    'title' => \Yii::t('yii', 'Factura'),
                                 ]);    
 
                             }, 

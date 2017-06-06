@@ -138,4 +138,42 @@ class PedidosController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
+    public $dataProvider;
+        public function actionGenerarpdf()
+         {
+          $varIdPedido=Yii::$app->request->get('idpedido');
+
+
+            
+          //esta consulta tiene todos los parametros
+           $consultaTodo=ModelPersonas::findBySql("
+             select 
+            tbl_pedidos.PEDI_FECHA,
+            tbl_pedidos.PEDI_ID,
+            tbl_productos.PROD_DESCRIPCION,
+            tbl_invetarios.INVE_PRECIO,
+            tbl_detallepedido.DEPE_CANTIDAD,
+            tbl_personas.PERS_IDENTIFICACION,
+            tbl_personas.PERS_NOMBRE,
+            tbl_personas.PERS_TELEFONO
+            FROM
+            tbl_productos
+            INNER JOIN tbl_invetarios ON (tbl_productos.PROD_ID = tbl_invetarios.PROD_ID)
+            INNER JOIN tbl_detallepedido ON (tbl_invetarios.INVE_ID = tbl_detallepedido.INVE_ID)
+            INNER JOIN tbl_pedidos ON (tbl_pedidos.PEDI_ID = tbl_detallepedido.PEDI_ID)
+            INNER JOIN tbl_personas ON (tbl_pedidos.PERS_ID = tbl_personas.PERS_ID)
+            WHERE
+            tbl_pedidos.PEDI_ID =  $varIdPedido
+              ")->asArray()->all();
+
+
+         
+              $this->render('facturapedidos', ['dataProvider' => $consultaTodo]);
+          
+         
+
+              
+          
+        }
 }
